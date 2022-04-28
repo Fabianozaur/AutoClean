@@ -1,0 +1,42 @@
+.navbar-container{
+  display: flex;
+  flex-direction: row;
+  /*justify-content: space-between;*/
+  gap: 2rem;
+  align-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100vw;
+  height: 50px;
+  background-color: rgb(255,255,255,0.8);
+}
+.navbar-container img{
+  height: 50px;
+  width: 50px;
+
+}
+
+.navbar-container #logoutbutton{
+  margin-left: auto  !important;
+  margin-right: 10px;
+}
+
+@media screen and (max-width: 400px) {
+
+  .navbar-container{
+    display: flex;
+    background-size: contain;
+    flex-direction: column;
+    /*justify-content: space-between;*/
+    gap: 0rem;
+    align-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100vw;
+    height: auto;
+    background-color: rgb(255,255,255,0.8);
+  }
+  .navbar-container img{
+    display: none;
+  }
+}

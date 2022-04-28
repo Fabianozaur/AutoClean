@@ -1,22 +1,34 @@
-<div class="displayTable">
-  <div class="displayTableCell">
-    <div class="authBlock">
-      <h3>Thank You for Registering</h3>
-      <div class="formGroup" *ngIf="authService.userData as user">
-        <p class="text-center">We have sent a confirmation email to <strong>{{user.email}}</strong>.</p>
+<img style="padding-left: 7%" src="assets/Wash.png" id="CarWashed">
+
+<div id="full-size" style="width:100%; display: flex; align-items: center; justify-content: center; padding-left: 35%"  >
+  <p id="alerta" *ngIf="authService._isAlert" style="left:auto; top:1px; position:absolute;">
+    <ngb-alert class="animate-show animate-hide" style="" type="secondary" >
+      {{authService.theError}}
+    </ngb-alert>
+  </p>
+  <div id="loginPart" style="display: flex; align-items: center; justify-content: center; flex-direction: column; ">
+    <img class="mb-4" src="assets/LogoBasicCircle.png" id="companyLogo" >
+
+      <h3 class="mb-3" style="padding-bottom: 5%">Thank You for Registering</h3>
+
+      <div class="form-group" *ngIf="authService.userData as user">
+        <p class="text-center">We have sent a confirmation email to <strong style="color: #FF8A00FF">{{user.email}}</strong>.</p>
         <p class="text-center">Please check your email and click on the link to verfiy your email address.</p>
       </div>
 
       <!-- Calling SendVerificationMail() method using authService Api -->
-      <div class="formGroup">
-        <button type="button" class="btn btnPrimary" (click)="authService.SendVerificationMail()">
+      <div class="form-group">
+        <p class="text-center">If you didn't recieve an email press here</p>
+      </div>
+    <div class="form-group mb-4">
+    <button type="button" class="btn btn-outline-dark" (click)="authService.SendVerificationMail()">
           <i class="fas fa-redo-alt"></i>
           Resend Verification Email
         </button>
       </div>
+    <div class="redirectToSignin">
+      <span>After you confirm your email go back to: <span class="" routerLink="/sign-in"> Sign in</span></span>
     </div>
-    <div class="redirectToLogin">
-      <span>Go back to?<span class="redirect" routerLink="/sign-in"> Sign in</span></span>
     </div>
-  </div>
+
 </div>

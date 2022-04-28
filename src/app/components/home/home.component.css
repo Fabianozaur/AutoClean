@@ -1,0 +1,42 @@
+#wrapper { position: relative; }
+#over_map {
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: auto;
+  position: absolute;
+  bottom: 56px;
+  top: 56px;
+  width: 406px;
+  left: 96px;
+  background-color: white;
+  border-radius: 15px 15px 15px 15px
+}
+
+#whereDiv{
+  font-family:'Trebuchet MS';
+  align-items: stretch;
+  flex-direction: column;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+#map{
+  flex: 1 1 auto;
+  position: relative;
+}
+.input-group-text{
+  background-color: #FF8A00FF;
+
+}
+.btn-outline-dark{
+  color: black;
+
+  background-color: #FF8A00FF !important;
+}
+.btn-outline-dark:hover{
+  background-color: #FF8A00FF !important;
+}

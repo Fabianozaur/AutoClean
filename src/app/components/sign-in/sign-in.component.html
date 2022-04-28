@@ -1,33 +1,62 @@
-<div class="displayTable">
-  <div class="displayTableCell">
-    <div class="authBlock">
-      <h3>Sign In</h3>
-      <div class="formGroup">
-        <input type="text" class="formControl" placeholder="Username" #userName required>
-      </div>
-      <div class="formGroup">
-        <input type="password" class="formControl" placeholder="Password" #userPassword required>
-      </div>
-      <!-- Calling SignIn Api from AuthService -->
-      <div class="formGroup">
-        <input type="button" class="btn btnPrimary" value="Log in" (click)="authService.SignIn(userName.value, userPassword.value)">
-      </div>
-      <div class="formGroup">
-        <span class="or"><span class="orInner">Or</span></span>
-      </div>
-      <!-- Calling GoogleAuth Api from AuthService -->
-      <div class="formGroup">
-        <button type="button" class="btn googleBtn" (click)="authService.GoogleAuth()">
-          <i class="fab fa-google-plus-g"></i>
-          Log in with Google
-        </button>
-      </div>
-      <div class="forgotPassword">
-        <span routerLink="/forgot-password">Forgot Password?</span>
-      </div>
+
+<img style="z-index: 98;padding-left: 7%" src="assets/Wash.png" id="CarWashed">
+
+<div id="full-size" style="width:100%; display: flex; align-items: center; justify-content: center; padding-left: 35%"  >
+
+  <p id="alerta" *ngIf="authService._isAlert" style="left:auto; top:1px; position:absolute;">
+    <ngb-alert class="animate-show animate-hide" style="" type="secondary" >
+      {{authService.theError}}
+    </ngb-alert>
+  </p>
+  <div id="loginPart" style="display: flex; align-items: center; justify-content: center; flex-direction: column; ">
+    <img class="mb-4" src="assets/LogoBasicCircle.png" id="companyLogo" >
+
+    <h3 class="mb-3" style="padding-bottom: 5%" >Welcome to Auto Clean </h3>
+
+
+  <div class="input-group mb-2" >
+    <div class="input-group-prepend" >
+      <span class="input-group-text addon">
+        <fa-icon [icon]="faCircleUser" id="faCircle"  ></fa-icon>
+      </span>
     </div>
-    <div class="redirectToLogin">
-      <span>Don't have an account?<span class="redirect" routerLink="/register-user"> Sign Up</span></span>
-    </div>
+      <input type="email" class="form-control input-lg rounded-12" autocomplete="email" placeholder="Email" #userName required>
   </div>
+  <div class="input-group mb-1" >
+    <div class="input-group-prepend">
+      <span class="input-group-text addon" >
+        <fa-icon [icon]="faLock"  ></fa-icon>
+      </span>
+    </div>
+
+        <input type="password" class="form-control" placeholder="Password" #userPassword required>
+      </div>
+    <div class="forgotPassword mb-4" style="padding-left: 50%">
+      <span routerLink="/forgot-password">Forgot Password?</span>
+    </div>
+      <div class="form-group mb-2">
+        <input type="button"  class="btn btn-outline-dark" value=" Log in " (click)="authService.SignIn(userName.value, userPassword.value)">
+      </div>
+      <div class="form-group mb-2" id="ORR" >
+        <span class="or"><span class="orInner"> OR </span>
+        </span>
+      </div>
+
+      <div class="form-group mb-4">
+        <button type="button" class="btn btn-outline-dark waves-effect px-3" (click)="authService.GoogleAuth()">
+          <fa-icon id="fa-google" [icon]="faGoogle"></fa-icon>
+        </button>
+        <button style="position: relative; left: 3px;" type="button" class="btn btn-outline-dark waves-effect px-3" (click)="authService.FacebookAuth()">
+          <fa-icon id="fa-fb" [icon]="faFb"></fa-icon>
+        </button>
+
+      </div>
+
+    <div class="redirectToSignUp">
+      <span>Don't have an account? <span class="redirect" routerLink="/register-user"> Sign Up </span></span>
+    </div>
 </div>
+
+</div>
+
+

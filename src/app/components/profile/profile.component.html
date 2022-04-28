@@ -1,1 +1,76 @@
-<p>profile works!</p>
+<app-dashboard xmlns="http://www.w3.org/1999/html"></app-dashboard>
+<!--  <div class="row">-->
+<!--            <a class="nav-link" (click)="authService.SignOut()">-->
+<!--              <i class="fas fa-sign-out-alt"></i>Log out-->
+<!--            </a>-->
+  <!-- Main content -->
+  <div class="container">
+  <div id="box">
+
+  <div id="#nonBackground">
+      <!-- Show user data when logged in -->
+      <div  *ngIf="authService.userFirestoreData as user">
+          <div class="media">
+            <img width="150" height="150" id="userimg" class=" mr-5  rounded-circle" src="{{(user.photoURL) ? user.photoURL : '/assets/user.png'}}"
+                 alt="{{user.displayName}}">
+          </div>
+        <div class="media-body mb-xl-5">
+              <h3 class="text-lg-center mb-4"style="size: A5">Profile Details</h3>
+              <div class="input-group mb-2" >
+                <div class="input-group-prepend">
+                  <span class="input-group-text addon" >
+                    <fa-icon [icon]="faCircleUser"  ></fa-icon>
+                  </span>
+                </div>
+                <div class="container-sm">
+                <strong style="margin-right: 20px" > {{user.displayName}}</strong><span style=" cursor: pointer;" (click)="editUser()">edit</span>
+                </div>
+              </div>
+              <div *ngIf="editUserMode" class="input-group mb-2">
+                <input [(ngModel)]="newDisplayName" type="name" class="container-sm form-control input-sm rounded-12" autocomplete="name" placeholder="New Full Name" #userName required>
+                <button class="btn-outline-dark rounded-3 fw-bold" (click)="saveUser()"> Save</button>
+              </div>
+              <div class="input-group mb-2" >
+                <div class="input-group-prepend">
+                      <span class="input-group-text addon" >
+                        <fa-icon [icon]="faEnvelope"  ></fa-icon>
+                      </span>
+                </div>
+                <p class="container-sm">
+                  <strong style="margin-right: 20px" > {{user.email}}</strong>
+                </p>
+              </div>
+              <div *ngIf="!user.emailVerified" class="input-group mb-2" >
+                <div class="input-group-prepend">
+                      <span class="input-group-text addon" >
+                        <fa-icon [icon]="faExclam"  ></fa-icon>
+                      </span>
+                </div>
+                <div class="container-sm">
+                  <strong> Please verify your email!</strong>
+                </div>
+              </div>
+              <div class="input-group mb-2" >
+                <div class="input-group-prepend">
+                          <span class="input-group-text addon" >
+                            <fa-icon [icon]="faPhone"  ></fa-icon>
+                          </span>
+                </div>
+                <div *ngIf="user.phone==''" class="container-sm">
+                  <strong style="margin-right: 20px" > Please add your phone number! </strong><span style=" cursor: pointer;" (click)="editPhone()">edit</span>
+                </div>
+                <div *ngIf="user.phone!=''" class="container-sm">
+                  <strong style="margin-right: 20px" > {{user.phone}}</strong><span  style=" cursor: pointer;" (click)="editPhone()">edit</span>
+                </div>
+              </div>
+              <div *ngIf="editPhoneMode" class="input-group mb-2">
+                <input [(ngModel)]="newPhoneNumber" type="phone" class="container-sm form-control input-sm rounded-12" autocomplete="phone" placeholder="New Phone Number"  required>
+                <button class="btn-outline-dark rounded-3 fw-bold" (click)="savePhone()"> Save</button>
+              </div>
+        </div>
+          </div>
+        </div>
+    <div class="background"></div>
+
+  </div>
+  </div>

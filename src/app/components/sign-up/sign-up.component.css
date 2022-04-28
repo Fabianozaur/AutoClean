@@ -1,0 +1,110 @@
+html, body {margin:0;padding:0;height:100%;}
+#full-size {
+  height:100%;
+  width:100%;
+  position:absolute;
+  top:0;
+  left:0;
+  overflow:hidden;
+  background-image: url("src/assets/GoodWave.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  font-family:'Trebuchet MS'
+}
+
+#faCircle{
+  color: #000000;
+}
+
+.redirect{
+  text-decoration: underline black;
+  cursor: pointer;
+}
+
+.btn-outline-dark{
+  color: black;
+
+  background-color: #FF8A00FF !important;
+}
+.btn-outline-dark:hover{
+  background-color: #FF8A00FF !important;
+}
+.addon{
+  background-color: #FF8A00FF;
+}
+
+.input-group-prepend{
+  size:20px;
+}
+
+#iconeEnvelope{
+  font-size: 16px;
+}
+#faCircle{
+  font-size: 17px;
+}
+#faLock{
+  font-size: 17px;
+}
+/*#loginPart{*/
+/*  padding-left: 55%;*/
+/*  padding-top: 15%;*/
+/*}*/
+#companyLogo{
+  width: 200px;
+  height: 200px;
+
+}
+
+#ORR{
+  flex-direction: row !important;
+}
+
+#CarWashed{
+  width: 650px;
+  height: 400px;
+}
+@media screen and (max-width: 950px) {
+
+  #full-size{
+    /*background-image: none;*/
+    float: left;
+    clear: left;
+    padding-top: 0%;
+    box-sizing: border-box;
+    padding-left: 0% !important;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0% 40%, #ffffff 40% 100%), radial-gradient(farthest-corner at -900px 250px, #ffffff 80%, #FF8A00FF 80% 81%, #FF8A00FF 81%);
+  }
+  #companyLogo{
+    width: 150px;
+    height: 150px;
+  }
+
+}
+
+
+
+@media screen and (max-width: 1350px) {
+  #CarWashed {
+    display: none;
+  }
+}
+@media screen and (max-height: 610px) {
+
+  #full-size {
+    /*background-image: none;*/
+    float: left;
+    clear: left;
+    overflow-x: hidden;
+    overflow-y: auto;
+    box-sizing: border-box;
+    padding-left: 0% !important;
+    padding-top: 27%;
+    padding-bottom: 5%;
+    inline-size: auto;
+  }
+  #companyLogo{
+    display: none;
+  }
+}
+
