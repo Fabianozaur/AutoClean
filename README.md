@@ -1,28 +1,10 @@
-# AutoCleanV0
+# AutoClean
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.6.
+The AutoClean Web Application is the application I developed during my last semester in the Univeristy for the Batchelor Thesis.
 
-## Development server
+It works as a Wolt combined with an Uber as an web application in which the users can order a car washing service. The users need to create an account first 
+after that they can see the main page where they can pin point the location of their car, in order to create the car wash request, they can also select to which washing station they want their car to be washed. On the other side of the application the washer users can see the order being placed and so they can choose which order they prefer. After the washer selects the other user's order, they become connected and they can see on the map each others locations, after the washer comes and picks up the car the client will be able to see the live tracking of his car live anytime. 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+You can watch a full Demo of the application on this link: https://youtu.be/70puifbrcT8
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-"#AutoClean" 
+Technologies used: Typescript, HTML, CSS, Bootstrap, NodeJs, Angular, Firebase, Firestore, Google Map APIs.
